@@ -1,8 +1,8 @@
 L.Map.mergeOptions({
-    inputControl: true
+    pasteControl: false
 });
 
-L.Control.Input = L.Control.extend({
+L.Control.Paste = L.Control.extend({
     options: {
         position: 'topright',
         title: 'Paste objects'
@@ -13,10 +13,10 @@ L.Control.Input = L.Control.extend({
     },
 
     onAdd: function (map) {
-        var className = 'leaflet-control-input',
+        var className = 'leaflet-control-paste',
             container = L.DomUtil.create('div', className);
 
-        this.handler = new L.Handler.Input(map, this.options);
+        this.handler = new L.Handler.Paste(map, this.options);
         this._createButton(
                 this.options.title,
                 className + '-button' + ' ' + this.options.position,
@@ -77,18 +77,18 @@ L.Control.Input = L.Control.extend({
 
 });
 
-L.Control.input = function (options) {
-    return new L.Control.Input();
+L.Control.paste = function (options) {
+    return new L.Control.Paste();
 }
 
 L.Map.addInitHook(function () {
-    if (this.options.inputControl) {
-        this.inputControl = L.Control.input();
-        this.addControl(this.inputControl);
+    if (this.options.pasteControl) {
+        this.pasteControl = L.Control.paste();
+        this.addControl(this.pasteControl);
     }
 });
 
-L.Handler.Input = L.Handler.extend({
+L.Handler.Paste = L.Handler.extend({
     includes: L.Mixin.Events,
 
     initialize: function (map, options) {
