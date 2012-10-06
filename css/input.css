@@ -1,0 +1,50 @@
+.leaflet-control-input {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+}
+.leaflet-control-input {
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-control-input a.topright,
+.leaflet-control-input a.bottomright {
+  float: right;
+}
+
+.leaflet-control-input a.topleft,
+.leaflet-control-input a.bottomleft{
+  float: left;
+}
+
+.leaflet-control-input a {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.leaflet-control-input a {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+.leaflet-control-input a {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width: 19px;
+  height: 19px;
+  margin-top: 5px;
+}
+.leaflet-control-input a:first-child{
+  margin-top: 0;
+} 	
+.leaflet-control-input a:hover {
+  background-color: #fff;
+}
+.leaflet-touch .leaflet-control-input a {
+  width: 27px;
+  height: 27px;
+}	
+
+.hidden {
+  display: none;
+}
