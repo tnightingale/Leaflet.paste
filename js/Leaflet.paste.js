@@ -1,7 +1,3 @@
-L.Map.mergeOptions({
-    pasteControl: false
-});
-
 L.Control.Paste = L.Control.extend({
     options: {
         position: 'topright',
@@ -72,6 +68,9 @@ L.Control.Paste = L.Control.extend({
         L.DomEvent.on(form, 'submit', fn, context);
         L.DomEvent.on(form, 'submit', this.handler.disable, this.handler);
 
+        // Reset form.
+        L.DomEvent.on(form, 'submit', function () { input.value = "" });
+
         return container;
     }
 
@@ -80,6 +79,10 @@ L.Control.Paste = L.Control.extend({
 L.Control.paste = function (options) {
     return new L.Control.Paste();
 }
+
+L.Map.mergeOptions({
+    pasteControl: false
+});
 
 L.Map.addInitHook(function () {
     if (this.options.pasteControl) {
@@ -119,8 +122,10 @@ L.Handler.Paste = L.Handler.extend({
         }
     },
 
-    process: function (e) {
-        console.log('processing');
-        console.log(e);
+    submit: function (e) {
+        var type,
+            value = e.target[0].value;
+
+        this._process(value, type);
     }
 });
