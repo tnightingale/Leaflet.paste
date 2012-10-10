@@ -8,6 +8,10 @@
   background: rgba(0, 0, 0, 0.25);
 }
 
+.leaflet-control-paste-button {
+  background-image: url(images/paste-icon.png);
+}
+
 .leaflet-control-paste a.topright,
 .leaflet-control-paste a.bottomright {
   float: right;

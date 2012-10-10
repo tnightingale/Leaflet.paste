@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     },
     cssmin: {
       dist: {
-        src: ['<banner:meta.banner', '<file_strip_banner:css/Leaflet.paste.css>'],
+        src: ['<banner:meta.banner', '<file_strip_banner:dist/Leaflet.paste.css>'],
         dest: 'dist/Leaflet.paste.min.css'
       }
     },
