@@ -3,6 +3,8 @@
     <title>Leaflet</title>
     <script src="http://dl.dropbox.com/u/48433/leaflet/dist/leaflet-src.js"></script>
     <link rel="stylesheet" href="http://dl.dropbox.com/u/48433/leaflet/dist/leaflet.css" />
+    <script src="../lib/wicket.src.js"></script>
+    <script src="../js/Leaflet.Layer.WKT.js"></script>
     <script src="../js/Leaflet.paste.js"></script>
     <link rel="stylesheet" href="../css/Leaflet.paste.css" />
   </head>
@@ -12,9 +14,11 @@
       var map = L.map('map', {
             center: [59.12, -121.90],
             zoom: 8,
-            layers: [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')],
-            pasteControl: true
-          });
+            layers: [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')]
+          }),
+          pasteControl = L.Control.paste({
+            geojson: false
+          }).addTo(map);
 
     </script>
   </body>
