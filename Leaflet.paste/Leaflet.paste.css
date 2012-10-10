@@ -1,0 +1,54 @@
+.leaflet-control-paste {
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
+}
+.leaflet-control-paste {
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.leaflet-control-paste-button {
+  background-image: url(images/paste-icon.png);
+}
+
+.leaflet-control-paste a.topright,
+.leaflet-control-paste a.bottomright {
+  float: right;
+}
+
+.leaflet-control-paste a.topleft,
+.leaflet-control-paste a.bottomleft{
+  float: left;
+}
+
+.leaflet-control-paste a {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.leaflet-control-paste a {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+}
+.leaflet-control-paste a {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  width: 19px;
+  height: 19px;
+  margin-top: 5px;
+}
+.leaflet-control-paste a:first-child{
+  margin-top: 0;
+} 	
+.leaflet-control-paste a:hover {
+  background-color: #fff;
+}
+.leaflet-touch .leaflet-control-paste a {
+  width: 27px;
+  height: 27px;
+}	
+
+.hidden {
+  display: none;
+}
