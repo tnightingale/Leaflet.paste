@@ -1,0 +1,18 @@
+{
+  "author": "Tom Nightingale <tom@affinitybridge.com>",
+  "name": "Leaflet.paste",
+  "description": "Vector paste control for Leaflet.",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thegreat/Leaflet.paste.git"
+  },
+  "engines": {
+    "node": "~0.6.17"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.3.16",
+    "grunt-css": "~0.2.1"
+  }
+}
