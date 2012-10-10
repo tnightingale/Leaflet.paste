@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Leaflet.paste by thegreat</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Leaflet.paste</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/thegreat/Leaflet.paste">View the Project on GitHub <small>thegreat/Leaflet.paste</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/thegreat/Leaflet.paste/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/thegreat/Leaflet.paste/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/thegreat/Leaflet.paste">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Leaflet.paste</h1>
+
+<p>Provides a Leaflet control for copy &amp; pasting serialized vector data (WKT or
+GeoJSON) into a map. Upon submission of the control, the data is parsed and 
+converted into vector layers on the map.</p>
+
+<h2>Usage</h2>
+
+<p>To use with default settings, just set <code>pasteControl = true</code> in your Leaflet map's options.</p>
+
+<p>If you would like to specify which data formats to accept, add the control manually.</p>
+
+<p>E.g:</p>
+
+<pre><code>var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+    map = L.map('map', { layers: [layer] }),
+    pasteControl = L.Control.paste({
+      geojson: false
+    });
+map.addControl(pasteControl);
+</code></pre>
+
+<p>See <a href="https://github.com/thegreat/Leaflet.paste/blob/master/example/Leaflet.paste.html">example/Leaflet.paste.html</a> for a working example.</p>
+
+<h2>Includes</h2>
+
+<p>Leaflet.paste includes <a href="GPLv3">Wicket</a>, a library for parsing WKT.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/thegreat">thegreat</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
