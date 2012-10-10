@@ -1,6 +1,8 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  grunt.loadNpmTasks('grunt-css');
+
   // Project configuration.
   grunt.initConfig({
     meta: {
@@ -29,6 +31,12 @@ module.exports = function(grunt) {
         dest: 'dist/Leaflet.paste.min.js'
       }
     },
+    cssmin: {
+      dist: {
+        src: ['<banner:meta.banner', '<file_strip_banner:css/Leaflet.paste.css>'],
+        dest: 'dist/Leaflet.paste.min.css'
+      }
+    },
     watch: {
       files: '<config:lint.files>',
       tasks: 'lint qunit'
@@ -53,6 +61,6 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint qunit concat min cssmin');
 
 };

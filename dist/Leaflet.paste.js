@@ -454,7 +454,7 @@ L.WKT = L.GeoJSON.extend({
         if (options.filter && !options.filter(wicket.components)) { return; }
 
         var layer = wicket.toObject(this.options);
-        layer.wkt= wicket;
+        layer.wkt = wicket;
 
         this.resetStyle(layer);
 
