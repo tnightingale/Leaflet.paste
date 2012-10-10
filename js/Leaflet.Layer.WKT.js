@@ -5,12 +5,12 @@ L.WKT = L.GeoJSON.extend({
 
     addData: function (wkt) {
         var options = this.options,
-            wkt = new Wkt.Wkt(wkt);
+            wicket = new Wkt.Wkt(wkt);
 
-        if (options.filter && !options.filter(wkt.components)) { return; }
+        if (options.filter && !options.filter(wicket.components)) { return; }
 
-        var layer = wkt.toObject(this.options);
-        layer.wkt = wkt;
+        var layer = wicket.toObject(this.options);
+        layer.wkt= wicket;
 
         this.resetStyle(layer);
 

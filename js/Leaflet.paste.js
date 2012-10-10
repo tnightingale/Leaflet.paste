@@ -95,7 +95,7 @@ L.Control.Paste = L.Control.extend({
         L.DomEvent.on(form, 'submit', fn, context);
 
         // Reset form.
-        L.DomEvent.on(form, 'submit', function () { input.value = "" });
+        L.DomEvent.on(form, 'submit', function () { input.value = ""; });
 
         this._messageBox = message_box;
 
@@ -112,7 +112,7 @@ L.Control.Paste = L.Control.extend({
 
 L.Control.paste = function (options) {
     return new L.Control.Paste(options);
-}
+};
 
 L.Map.mergeOptions({
     pasteControl: false
@@ -162,9 +162,11 @@ L.Handler.Paste = L.Handler.extend({
             this.disable();
         }
         catch (e) {
+            var err = e;
+
             // Leaflet's fire() seems to clobber Error objects.
             if (e instanceof Error) {
-                e = { message: e.message };
+                err = { message: e.message };
             }
             this.fire('error', e);
         }
