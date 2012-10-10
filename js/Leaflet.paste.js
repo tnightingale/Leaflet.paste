@@ -19,16 +19,19 @@ L.Control.Paste = L.Control.extend({
         var className = 'leaflet-control-paste',
             container = L.DomUtil.create('div', className);
 
+        L.DomEvent.disableClickPropagation(container);
+
         this.handler = new L.Handler.Paste(map, this.options);
+        this.handler.on('activated deactivated', this._toggleModal, this);
+        this.handler.on('error', this._displayError, this);
+
         this._createButton(
                 this.options.title,
                 className + '-button' + ' ' + this.options.position,
                 container,
-                this.handler.enable,
+                this.handler.toggle,
                 this.handler
         );
-        this.handler.on('activated deactivated', this._toggleModal, this);
-        this.handler.on('error', this._displayError, this);
 
         this._modal = this._createForm(
                 className + '-form',
@@ -36,7 +39,6 @@ L.Control.Paste = L.Control.extend({
                 this.handler.submit,
                 this.handler
         );
-        this._messageBox = L.DomUtil.create('div', 'message-box', this._modal);
 
         return container;
     },
@@ -47,6 +49,7 @@ L.Control.Paste = L.Control.extend({
         }
         else {
             L.DomUtil.addClass(this._modal, 'hidden');
+            this._messageBox.innerHTML = '';
         }
     },
 
@@ -70,6 +73,7 @@ L.Control.Paste = L.Control.extend({
     _createForm: function (className, parentContainer, fn, context) {
         var options = this.options,
             container = L.DomUtil.create('div', 'hidden', parentContainer),
+            message_box = L.DomUtil.create('div', 'message-box', container),
             form = L.DomUtil.create('form', null, container),
             input = L.DomUtil.create('textarea', null, form),
             format = L.DomUtil.create('select', null, form),
@@ -82,7 +86,6 @@ L.Control.Paste = L.Control.extend({
             this._createFormatOption('geojson', options.geojson.title, format);
         }
 
-        L.DomEvent.disableClickPropagation(container);
         input.rows = 10;
         format.multiple = false;
         submit.type = 'submit';
@@ -93,6 +96,8 @@ L.Control.Paste = L.Control.extend({
 
         // Reset form.
         L.DomEvent.on(form, 'submit', function () { input.value = "" });
+
+        this._messageBox = message_box;
 
         return container;
     },
@@ -136,6 +141,15 @@ L.Handler.Paste = L.Handler.extend({
     removeHooks: function () {
         if (this._map) {
             this.fire('deactivated');
+        }
+    },
+
+    toggle: function () {
+        if (this.enabled()) {
+            this.disable();
+        }
+        else {
+            this.enable();
         }
     },
 
