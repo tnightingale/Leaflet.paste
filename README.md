@@ -28,6 +28,6 @@ See [example/Leaflet.paste.html](https://github.com/thegreat/Leaflet.paste/blob/
 
 ## Includes
 
-Leaflet.paste includes [Wicket] (GPLv3), a library for parsing WKT.
+Leaflet.paste includes [Wicket], a library for parsing WKT.
 
 [Wicket]: https://github.com/arthur-e/Wicket
