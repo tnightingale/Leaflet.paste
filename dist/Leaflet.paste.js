@@ -1,4 +1,4 @@
-/*! Leaflet.paste - v0.1.0 - 2012-10-10
+/*! Leaflet.paste - v0.1.0 - 2012-10-11
 * http://github.com/thegreat/Leaflet.paste/
 * Copyright (c) 2012 Affinity Bridge; Licensed GPLv3
 *

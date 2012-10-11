@@ -17,12 +17,9 @@
       var map = L.map('map', {
             center: [59.12, -121.90],
             zoom: 5,
-            layers: [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')]
-          }),
-          pasteControl = L.Control.paste({
-            geojson: false
-          }).addTo(map);
-
+            layers: [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')],
+            pasteControl: true
+          });
     </script>
   </body>
 </html>
