@@ -651,7 +651,7 @@ L.Handler.Paste = L.Handler.extend({
             if (e instanceof Error) {
                 err = { message: e.message };
             }
-            this.fire('error', e);
+            this.fire('error', err);
         }
     },
 
@@ -678,6 +678,6 @@ L.Util.extend(L.Handler.Paste, {
         return L.wkt(data);
     },
     geojson: function (data) {
-        return L.geoJSON(data);
+        return L.geoJson(JSON.parse(data));
     }
 });
