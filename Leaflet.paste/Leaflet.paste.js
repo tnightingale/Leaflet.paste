@@ -1,4 +1,4 @@
-/*! Leaflet.paste - v0.1.0 - 2012-10-10
+/*! Leaflet.paste - v0.1.0 - 2012-10-11
 * http://github.com/thegreat/Leaflet.paste/
 * Copyright (c) 2012 Affinity Bridge; Licensed GPLv3
 *
@@ -651,7 +651,7 @@ L.Handler.Paste = L.Handler.extend({
             if (e instanceof Error) {
                 err = { message: e.message };
             }
-            this.fire('error', e);
+            this.fire('error', err);
         }
     },
 
@@ -678,6 +678,6 @@ L.Util.extend(L.Handler.Paste, {
         return L.wkt(data);
     },
     geojson: function (data) {
-        return L.geoJSON(data);
+        return L.geoJson(JSON.parse(data));
     }
 });
