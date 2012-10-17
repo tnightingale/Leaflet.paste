@@ -1,4 +1,4 @@
-/*! Leaflet.paste - v0.1.0 - 2012-10-11
+/*! Leaflet.paste - v0.1.0 - 2012-10-16
 * http://github.com/thegreat/Leaflet.paste/
 * Copyright (c) 2012 Affinity Bridge; Licensed GPLv3
 *
@@ -569,7 +569,7 @@ L.Control.Paste = L.Control.extend({
             this._createFormatOption('geojson', options.geojson.title, format);
         }
 
-        input.rows = 10;
+        input.rows = 5;
         format.multiple = false;
         submit.type = 'submit';
         submit.value = this.options.submit;

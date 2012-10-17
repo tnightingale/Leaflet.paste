@@ -40,14 +40,14 @@
 }
 .leaflet-control-paste a:first-child{
   margin-top: 0;
-} 	
+}
 .leaflet-control-paste a:hover {
   background-color: #fff;
 }
 .leaflet-touch .leaflet-control-paste a {
   width: 27px;
   height: 27px;
-}	
+}
 
 .hidden {
   display: none;

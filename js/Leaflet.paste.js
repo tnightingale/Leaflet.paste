@@ -86,7 +86,7 @@ L.Control.Paste = L.Control.extend({
             this._createFormatOption('geojson', options.geojson.title, format);
         }
 
-        input.rows = 10;
+        input.rows = 5;
         format.multiple = false;
         submit.type = 'submit';
         submit.value = this.options.submit;
