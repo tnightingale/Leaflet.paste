@@ -20,7 +20,12 @@ var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
     pasteControl = L.Control.paste({
       geojson: false
     });
+
 map.addControl(pasteControl);
+
+map.on('paste:layer-created', function (e) {
+    map.addLayer(e.layer);
+});
 ```
 
 See [example/Leaflet.paste.html](https://github.com/thegreat/Leaflet.paste/blob/master/example/Leaflet.paste.html) for a working example.
