@@ -185,7 +185,8 @@ L.Handler.Paste = L.Handler.extend({
 
         layer = L.Handler.Paste[type].call(this, value);
         center = layer.getBounds().getCenter();
-        this._map.addLayer(layer);
+
+        this._map.fire('paste:layer-created', { layer: layer });
         this._map.panTo(center);
     }
 });

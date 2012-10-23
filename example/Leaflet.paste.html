@@ -1,15 +1,19 @@
 <html>
   <head>
     <title>Leaflet</title>
-    <script src="http://dl.dropbox.com/u/48433/leaflet/dist/leaflet-src.js"></script>
-    <link rel="stylesheet" href="http://dl.dropbox.com/u/48433/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.ie.css" />
+    <![endif]-->
+    <link rel="stylesheet" href="../dist/Leaflet.paste.css" />
+    <!-- <link rel="stylesheet" href="../dist/Leaflet.paste.min.css" /> -->
+
+    <script src="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.js"></script>
     <script src="../lib/wicket.src.js"></script>
     <script src="../lib/wicket-leaflet.src.js"></script>
-    <script src="../js/Leaflet.Layer.WKT.js"></script>
-    <script src="../js/Leaflet.paste.js"></script>
-    <link rel="stylesheet" href="../dist/Leaflet.paste.css" />
+    <script src="../src/Leaflet.Layer.WKT.js"></script>
+    <script src="../src/Leaflet.paste.js"></script>
     <!-- <script src="../dist/Leaflet.paste.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="../dist/Leaflet.paste.min.css" /> -->
   </head>
   <body>
     <div style="width:100%; height:100%" id="map"></div>
@@ -20,6 +24,10 @@
             layers: [L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')],
             pasteControl: true
           });
+
+      map.on('paste:layer-created', function (e) {
+        map.addLayer(e.layer);
+      });
     </script>
   </body>
 </html>
