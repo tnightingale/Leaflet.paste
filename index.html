@@ -44,12 +44,18 @@ converted into vector layers on the map.</p>
 
 <p>E.g:</p>
 
-<pre><code>var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+<pre><code>
+var layer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
     map = L.map('map', { layers: [layer] }),
     pasteControl = L.Control.paste({
       geojson: false
     });
+
 map.addControl(pasteControl);
+
+map.on('paste:layer-created', function (e) {
+    map.addLayer(e.layer);
+});
 </code></pre>
 
 <p>See <a href="https://github.com/thegreat/Leaflet.paste/blob/master/example/Leaflet.paste.html">example/Leaflet.paste.html</a> for a working example.</p>
