@@ -1,7 +1,6 @@
-/*! Leaflet.paste - v0.1.0 - 2012-10-16
-* http://github.com/thegreat/Leaflet.paste/
-* Copyright (c) 2012 Affinity Bridge; Licensed GPLv3
-*
+/*! Leaflet.paste - v0.1.0 - 2012-10-23
+* Copyright (c) 2012 Affinity Bridge - Tom Nightingale <tom@affinitybridge.com> (http://affinitybridge.com)
+* Licensed GPLv3
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or

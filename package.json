@@ -7,6 +7,12 @@
     "type": "git",
     "url": "git://github.com/thegreat/Leaflet.paste.git"
   },
+  "licenses": [
+    {
+      "type": "GPLv3",
+      "url": "http://www.gnu.org/licenses"
+    }
+  ],
   "engines": {
     "node": "~0.6.17"
   },
