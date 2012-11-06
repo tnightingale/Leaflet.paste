@@ -4,7 +4,7 @@ Provides a Leaflet control for copy & pasting serialized vector data (WKT or
 GeoJSON) into a map. Upon submission of the control, the data is parsed and 
 converted into vector layers on the map.
 
-[Check out the demo.](http://thegreat.github.com/Leaflet.paste/demo.html)
+[Check out the demo.](http://tnightingale.github.com/Leaflet.paste/demo.html)
 
 ## Usage
 
@@ -28,7 +28,7 @@ map.on('paste:layer-created', function (e) {
 });
 ```
 
-See [example/Leaflet.paste.html](https://github.com/thegreat/Leaflet.paste/blob/master/example/Leaflet.paste.html) for a working example.
+See [example/Leaflet.paste.html](https://github.com/tnightingale/Leaflet.paste/blob/master/example/Leaflet.paste.html) for a working example.
 
 
 ## Includes
